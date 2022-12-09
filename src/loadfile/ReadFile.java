@@ -15,7 +15,7 @@ public abstract class ReadFile {
         String lineNoDuplicatedWhitespaces;
         try {
             reader = new BufferedReader(new FileReader(
-                    "D:/Repositories/Java/mes_1/files/Test1_4_4_copy.txt"));
+                    "D:/Repositories/Java/mes_1/files/Test1_4_4.txt"));
             String line = reader.readLine();
             while (line != null) {
                 //System.out.println(line);

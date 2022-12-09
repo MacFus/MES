@@ -65,8 +65,8 @@ public class MatrixH {
 
     private List<double[][]> multiply(double[][] macierz_dN_dX, double[][] macierz_dN_dY, int elemencikMoj) {
         double[][] macierzH = new double[macierz_dN_dX.length][4];
-        int wsp_konwekcji = 30;
-//        int wsp_konwekcji = globalVariables.getAlfa();
+//        int wsp_konwekcji = 30;
+        int wsp_konwekcji = globalVariables.getConductivity();
         List<double[][]> macierz_h_pc = new ArrayList<>();
         List<Double> detyJoty = jakobian.lista_detJ_jakobianow.get(elemencikMoj);
         // dla każdego pkt całkowania

@@ -13,7 +13,6 @@ public class Jakobian {
     public List<ArrayList<double[][]>> lista_odwrotnych_jakobianow = new ArrayList<>();
     public List<ArrayList<Double>> lista_detJ_jakobianow = new ArrayList<>();
 
-
     public Jakobian(int ile_pc) {
         this.elements = getElements();
         getJakobian(ile_pc);
@@ -69,7 +68,6 @@ public class Jakobian {
                         dX_dEta += Elem4.czteropunktowy_dN_dEta()[j][i] * x;
                         dX_dKsi += Elem4.czteropunktowy_dN_dKsi()[j][i] * x;
                     }
-
                 }
                 double[][] jakob_pc = new double[][]{{dX_dKsi, dY_dKsi}, {dX_dEta, dY_dEta}};
                 double[][] odwrocony_jakob_pc = new double[][]{{dY_dEta, -dY_dKsi}, {-dX_dEta, dX_dKsi}};

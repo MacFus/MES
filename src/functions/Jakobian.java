@@ -17,6 +17,7 @@ public class Jakobian {
         this.elements = getElements();
         getJakobian(ile_pc);
         get_1_DetJ();
+        Elem4_bok.uzupelnij_H_bc_kazdego_elementu(ile_pc);
     }
 
     public static ArrayList<Element> getElements() {

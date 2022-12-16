@@ -1,6 +1,38 @@
 package functions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Elem4 {
+    static double[] wagi_2 = {1, 1};
+    static double[] wagi_3 = {5.0 / 9.0, 8.0 / 9.0, 5.0 / 9.0};
+    static double[] wagi_4 = {(18 - Math.sqrt(30)) / 36, (18 + Math.sqrt(30)) / 36, (18 + Math.sqrt(30)) / 36, (18 - Math.sqrt(30)) / 36};
+
+    static double[] calculate_wagi(int ile_pc) {
+        List<Double> w = new ArrayList<>();
+        for (int i = 0; i < ile_pc; i++) {
+            for (int j = 0; j < ile_pc; j++) {
+                if (ile_pc == 2)
+                    w.add(wagi_2[i] * wagi_2[j]);
+                if (ile_pc == 3)
+                    w.add(wagi_3[i] * wagi_3[j]);
+                if (ile_pc == 4)
+                    w.add(wagi_4[i] * wagi_4[j]);
+            }
+        }
+        double[] wagi = new double[(int) Math.pow(ile_pc, 2)];
+        int i = 0;
+        for (Double waga : w) {
+            wagi[i]=waga;
+            i++;
+        }
+        return wagi;
+    }
+
+    static double[] w_2 = calculate_wagi(2);
+    static double[] w_3 = calculate_wagi(3);
+    static double[] w_4 = calculate_wagi(4);
+
     static double[] pc_2_ksi = new double[]{(-1 / Math.sqrt(3)), (1 / Math.sqrt(3)), -1 / Math.sqrt(3), 1 / Math.sqrt(3)};
     static double[] pc_2_eta = new double[]{(-1 / Math.sqrt(3)), (-1 / Math.sqrt(3)), 1 / Math.sqrt(3), 1 / Math.sqrt(3)};
     static double[] pc_3_ksi = {-Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5), -Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5), -Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5)};
@@ -60,6 +92,7 @@ public abstract class Elem4 {
         }
         return table;
     }
+
     public static double[][] czteropunktowy_dN_dEta() {
         double[][] table = new double[pc_4_ksi.length][4];
         for (int i = 0; i < 16; i++) {
@@ -69,6 +102,7 @@ public abstract class Elem4 {
         }
         return table;
     }
+
     public static double[][] czteropunktowy_dN_dKsi() {
         double[][] table = new double[pc_4_eta.length][4];
         for (int i = 0; i < 16; i++) {

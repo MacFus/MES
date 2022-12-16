@@ -13,8 +13,6 @@ public class Element extends Node{
     }
     @Override
     public String toString() {
-
-
         String s = "\tElement{" +
                 "id=" + id + " Nodes: " + printNodes();
         return s;

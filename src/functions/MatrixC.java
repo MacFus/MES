@@ -96,7 +96,7 @@ public class MatrixC {
     }
 
     public static void main(String[] args) {
-        MatrixC matrixC = new MatrixC(2);
+        MatrixC matrixC = new MatrixC(4);
         System.out.println();
     }
 }

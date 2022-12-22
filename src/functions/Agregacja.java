@@ -1,6 +1,7 @@
 package functions;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Agregacja {
@@ -15,7 +16,7 @@ public class Agregacja {
     double[][] macierz_agregacji_H;
     double[][] macierz_agregacji_C;
     double[] wektorP;
-    double[] wektorT0;
+    Double[] wektorT0;
     double[][] macierz_zastepcza_H;
     double[] wektor_zastepczy_P;
 
@@ -28,8 +29,11 @@ public class Agregacja {
         wektorP = new double[ilosc_nodow];
         lista_macierzy_h_bc_elementow = Elem4_bok.uzupelnij_H_bc_kazdego_elementu(ile_pc_bc);
         lista_wektorow_p_elementow = Elem4_bok.oblicz_wektor_P_kazdego_elementu(ile_pc_bc);
-        wektorT0 = new double[wektorP.length];
-        Arrays.fill(wektorT0, macierzH.globalVariables.getInitialTemp());
+        wektorT0 = new Double[wektorP.length];
+        for (int i = 0; i < wektorP.length; i++) {
+            wektorT0[i] = Double.valueOf(macierzH.globalVariables.getInitialTemp());
+        }
+//        Arrays.fill(wektorT0, macierzH.globalVariables.getInitialTemp());
     }
 
     public void oblicz_macierz_agregacji() {
@@ -61,7 +65,7 @@ public class Agregacja {
             }
         }
     }
-    public void oblicz(double[] wektorT){
+    public void oblicz(Double[] wektorT){
         macierz_zastepcza_H = new double[macierz_agregacji_H.length][macierz_agregacji_H.length];
         wektor_zastepczy_P = new double[macierz_agregacji_H.length];
 
@@ -77,13 +81,15 @@ public class Agregacja {
         int end = macierzH.globalVariables.getSimulationTime()/macierzH.globalVariables.getSimulationStepTime();
         int time = 0;
         oblicz(wektorT0);
+        System.out.println(ANSI_WHITE + "Time[s]\t\tMinTemp[s]\t\tMaxTemp[s]");
         for (int i = 0; i < end; i++) {
-            double[] t = GaussianElimination.lsolve(macierz_zastepcza_H, wektor_zastepczy_P);
+            Double[] t = GaussianElimination.lsolve(macierz_zastepcza_H, wektor_zastepczy_P);
             time+=macierzH.globalVariables.getSimulationStepTime();
-            System.out.println(ANSI_WHITE + "Simulation time: " + time );
-            for (int j = 0; j < t.length; j++) {
-                System.out.println(ANSI_RED + t[j]);
-            }
+//            System.out.println(ANSI_WHITE + "Simulation time: " + time);
+//            for (int j = 0; j < t.length; j++) {
+//                System.out.println(ANSI_RED + t[j]);
+//            }
+            System.out.format(ANSI_RED + "%d\t\t\t%.3f\t\t\t%.3f", time, Collections.min(Arrays.asList(t)), Collections.max(Arrays.asList(t)));
             System.out.println();
             oblicz(t);
         }

@@ -78,6 +78,8 @@ public class Agregacja {
         }
     }
     public void solve(){
+        oblicz_macierz_agregacji();
+        oblicz_wektor_P();
         int end = macierzH.globalVariables.getSimulationTime()/macierzH.globalVariables.getSimulationStepTime();
         int time = 0;
         oblicz(wektorT0);
@@ -189,7 +191,7 @@ public class Agregacja {
 
 
     public static void main(String[] args) {
-        Agregacja agregacja = new Agregacja(4, 3);
+        Agregacja agregacja = new Agregacja(2, 4);
         agregacja.oblicz_macierz_agregacji();
         agregacja.oblicz_wektor_P();
 

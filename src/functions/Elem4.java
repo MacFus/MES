@@ -130,57 +130,6 @@ public abstract class Elem4 extends Elem4_bok {
         System.out.println();
     }
 
-//    public static void oblicz_macierz_c_dla_kazdego_elementu(int ile_pc) {
-//        double gestosc = globalData.getDensity();
-//        double cieplo_wlasciwe = globalData.getSpecificHeat();
-//        ArrayList<double[]> funkcja_n_dla_pc;
-//
-//        for (Element element : Jakobian.getElements()) {
-//            funkcja_n_dla_pc = new ArrayList<>();
-//
-//            for (int i = 0; i < ile_pc; i++) {
-//                for (int j = 0; j < ile_pc; j++) {
-//                    if (ile_pc == 2) {
-//                        double ksi = pc_2[j];
-//                        double eta = pc_2[i];
-//                        funkcja_n_dla_pc.add(new double[]{dN1(ksi, eta), dN2(ksi, eta), dN3(ksi, eta), dN4(ksi, eta)});
-//                    }
-//                    if (ile_pc == 3) {
-//                        double ksi = pc_3[j];
-//                        double eta = pc_3[i];
-//                        funkcja_n_dla_pc.add(new double[]{dN1(ksi, eta), dN2(ksi, eta), dN3(ksi, eta), dN4(ksi, eta)});
-//                    }
-//                    if (ile_pc == 4) {
-//                        double ksi = pc_4[j];
-//                        double eta = pc_4[i];
-//                        funkcja_n_dla_pc.add(new double[]{dN1(ksi, eta), dN2(ksi, eta), dN3(ksi, eta), dN4(ksi, eta)});
-//                    }
-//                }
-//            }
-//            double[] wagi = new double[0];
-//            if (ile_pc == 2) {
-//                wagi = Elem4.wagi_2;
-//            } else if (ile_pc == 3) {
-//                wagi = Elem4.wagi_3;
-//            } else if (ile_pc == 4) {
-//                wagi = Elem4.wagi_4;
-//            }
-//            int m = 0;
-//            for (double[] fun_pc : funkcja_n_dla_pc) {
-//
-//                // dla każdego pkt całkowania
-//                for (int k = 0; k < fun_pc.length; k++) {
-//                    for (int l = 0; l < fun_pc.length; l++) {
-//                        double suma = fun_pc[k] * fun_pc[l] * Jakobian. * alfa;
-//                        macierzHBC[k][l] += suma * wagi[m];
-//                    }
-//                }
-//                m++;
-//            }
-//        }
-//
-//    }
-
 
     public static void main(String[] args) {
 

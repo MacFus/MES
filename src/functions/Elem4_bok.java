@@ -254,10 +254,11 @@ public abstract class Elem4_bok {
 
     public static void main(String[] args) {
 //        Elem4_bok elem4_bok = new Elem4_bok();
-//        Elem4_bok.uzupelnij_H_bc_kazdego_elementu(3);
-        Elem4_bok.oblicz_wektor_P_kazdego_elementu(2);
-        Elem4_bok.print_wektor_p(4);
+        Elem4_bok.uzupelnij_H_bc_kazdego_elementu(2);
+//        Elem4_bok.oblicz_wektor_P_kazdego_elementu(2);
+//        Elem4_bok.print_wektor_p(4);
 //        Elem4_bok.print();
+        System.out.println();
     }
 
 

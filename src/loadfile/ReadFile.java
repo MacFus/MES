@@ -3,7 +3,6 @@ package loadfile;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public abstract class ReadFile {
@@ -15,7 +14,7 @@ public abstract class ReadFile {
         String lineNoDuplicatedWhitespaces;
         try {
             reader = new BufferedReader(new FileReader(
-                    "D:/Repositories/Java/mes_1/files/Test1_4_4.txt"));
+                    "D:/Repositories/Java/mes_1/files/Test2_4_4_MixGrid.txt"));
             String line = reader.readLine();
             while (line != null) {
                 //System.out.println(line);

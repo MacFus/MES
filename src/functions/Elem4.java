@@ -39,7 +39,11 @@ public abstract class Elem4 extends Elem4_bok {
 
     static double[] pc_2 = new double[]{(-1 / Math.sqrt(3)), (1 / Math.sqrt(3))};
     static double[] pc_3 = new double[]{-Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5)};
-    static double[] pc_4 = new double[]{-Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), -Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0))};
+    static double[] pc_4 = new double[]{
+            -Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)),
+            -Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)),
+            Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)),
+            Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0))};
     static double[] pc_2_ksi = new double[]{(-1 / Math.sqrt(3)), (1 / Math.sqrt(3)), -1 / Math.sqrt(3), 1 / Math.sqrt(3)};
     static double[] pc_2_eta = new double[]{(-1 / Math.sqrt(3)), (-1 / Math.sqrt(3)), 1 / Math.sqrt(3), 1 / Math.sqrt(3)};
     static double[] pc_3_ksi = {-Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5), -Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5), -Math.sqrt(3.0 / 5), 0, Math.sqrt(3.0 / 5)};
@@ -49,6 +53,22 @@ public abstract class Elem4 extends Elem4_bok {
             -Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), -Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), -Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), -Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)),
             Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) - (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)),
             Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0)), Math.sqrt((3.0 / 7) + (2.0 / 7.0) * Math.sqrt(6.0 / 5.0))};
+
+    static double dN1(double ksi, double eta) {
+        return 0.25 * (1 - ksi) * (1 - eta);
+    }
+
+    static double dN2(double ksi, double eta) {
+        return 0.25 * (1 + ksi) * (1 - eta);
+    }
+
+    static double dN3(double ksi, double eta) {
+        return 0.25 * (1 + ksi) * (1 + eta);
+    }
+
+    static double dN4(double ksi, double eta) {
+        return 0.25 * (1 - ksi) * (1 + eta);
+    }
 
     static double[] dN_dKsi(double x) {
         double[] n = new double[]{(-1.0 / 4) * (1.0 - x), (1.0 / 4) * (1.0 - x), (1.0 / 4) * (1.0 + x), (-1.0 / 4) * (1.0 + x)};

@@ -45,7 +45,7 @@ public class Agregacja {
                     macierzH.jakobian.elements.get(element).getNodes()[3].getId() - 1};
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
-//                    macierz_agregacji_H[tab_elem[i]][tab_elem[j]] += macierzH.lista_macierzy_h_elementow.get(element)[i][j];
+//                    macierz_agregacji_H[tab_elem[i]][tab_elem[j]] += lista_macierzy_h_bc_elementow.get(element)[i][j];
                     macierz_agregacji_H[tab_elem[i]][tab_elem[j]] += macierzH.lista_macierzy_h_elementow.get(element)[i][j] + lista_macierzy_h_bc_elementow.get(element)[i][j];
                     macierz_agregacji_C[tab_elem[i]][tab_elem[j]] += macierzC.lista_macierzy_c_elementow.get(element)[i][j];
                 }
@@ -199,13 +199,14 @@ public class Agregacja {
 //        agregacja.macierzH.print();
 //        agregacja.printHbc();
 //        agregacja.printWektorP();
-////        agregacja.print_agregacja_H();
+//        agregacja.print_agregacja_H();
 //        agregacja.print_agregacja_C();
 //        agregacja.oblicz_zastepcze();
 
         agregacja.solve();
         agregacja.print(agregacja.macierz_agregacji_C);
         System.out.println();
+        agregacja.print(agregacja.macierz_agregacji_H);
 
 
     }

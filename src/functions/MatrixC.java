@@ -79,7 +79,7 @@ public class MatrixC {
             }
             int m = 0, p = 0;
             for (double[] fun_pc : funkcja_n_dla_pc) {
-                double detJ = jakobian.lista_detJ_jakobianow.get(i).get(p);
+                double detJ = jakobian.lista_1_detJ_jakobianow.get(i).get(p);
                 // dla każdego pkt całkowania
                 for (int k = 0; k < fun_pc.length; k++) {
                     for (int l = 0; l < fun_pc.length; l++) {

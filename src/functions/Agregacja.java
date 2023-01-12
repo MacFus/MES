@@ -13,8 +13,8 @@ public class Agregacja {
     List<double[][]> lista_macierzy_h_bc_elementow;
     List<double[]> lista_wektorow_p_elementow;
     private int ilosc_nodow;
-    double[][] macierz_agregacji_H;
-    double[][] macierz_agregacji_C;
+    public double[][] macierz_agregacji_H;
+    public double[][] macierz_agregacji_C;
     double[] wektorP;
     Double[] wektorT0;
     double[][] macierz_zastepcza_H;
@@ -192,19 +192,20 @@ public class Agregacja {
 
     public static void main(String[] args) {
         Agregacja agregacja = new Agregacja(2, 4);
-        agregacja.oblicz_macierz_agregacji();
-        agregacja.oblicz_wektor_P();
+//        agregacja.oblicz_macierz_agregacji();
+//        agregacja.oblicz_wektor_P();
 
 //        agregacja.print();
 //        agregacja.macierzH.print();
 //        agregacja.printHbc();
 //        agregacja.printWektorP();
-////        agregacja.print_agregacja_H();
+//        agregacja.print_agregacja_H();
 //        agregacja.print_agregacja_C();
 //        agregacja.oblicz_zastepcze();
 
         agregacja.solve();
         agregacja.print(agregacja.macierz_agregacji_C);
+        agregacja.print(agregacja.macierz_agregacji_H);
         System.out.println();
 
 

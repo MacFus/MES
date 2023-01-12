@@ -11,7 +11,7 @@ public class Jakobian {
     public List<Element> elements;
     public List<ArrayList<double[][]>> lista_jakobianow = new ArrayList<>();
     public List<ArrayList<double[][]>> lista_odwrotnych_jakobianow = new ArrayList<>();
-    public List<ArrayList<Double>> lista_detJ_jakobianow = new ArrayList<>();
+    public List<ArrayList<Double>> lista_1_detJ_jakobianow = new ArrayList<>();
 
     public Jakobian(int ile_pc) {
         this.elements = getElements();
@@ -91,7 +91,7 @@ public class Jakobian {
                 detJ = 1 / ((j_pc[0][0] * j_pc[1][1]) - (j_pc[0][1] * j_pc[1][0]));
                 listaDetJ.add(detJ);
             }
-            this.lista_detJ_jakobianow.add(listaDetJ);
+            this.lista_1_detJ_jakobianow.add(listaDetJ);
         }
     }
 
